@@ -1,0 +1,9 @@
+Olmeca, Costa del Golfo de Mexico, La Venta, 3000 a.C., 400 a.C.
+Zapoteca, Valle de Oaxaca, Monte Alban, 500 a.C., 900 d.C.
+Maya, Oriente de Mesoamerica, Chichen Itza, 1800 a.C., 1697 d.C.
+Teotihuacana, Valle de Mexico, Teotihuacan, 1800 a.C., NA
+Huasteca, Norte del Golfo de Mexico, Tamohi, 1500 a.C, Actual
+Tolteca, Valle de Hidalgo, Tula, 511 d.C., 1200 d.C.
+Mixteca, Occidente de Oaxaca y parte de Guerrero y Puebla, Mitla, 1500 a.C., 1523 d.C.
+Totonaca, Planicie costera de Veracruz y sierra de Puebla, El Tajin, ~300 d.C., ~1520 d.C
+Purepecha, Noroeste de Michoacan Guanajuato y Jalisco, Teintzuntzani, NA, Actual,

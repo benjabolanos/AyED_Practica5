@@ -1,0 +1,39 @@
+Dragon Olmeca, Tierra, Templo Tierroso, src/main/resources/imagenes/dioses/olmeca/dios_dragon.PNG,
+El Jaguar, Noche o Sol Nocturno, Varios, src/main/resources/imagenes/dioses/olmeca/jaguar_olmeca.PNG,
+Dios del Maiz, Maiz, La Milpa Olmeca, src/main/resources/imagenes/dioses/olmeca/dios_maiz.PNG,
+|
+Pije Tao, Creador Supremo, El Templo de Don Pepe,src/main/resources/imagenes/dioses/zapoteca/pije_tao.PNG,
+Cosijo, Relampago y Lluvia, Chispas y Chispitas,src/main/resources/imagenes/dioses/zapoteca/cosijo.PNG,
+Pitao Cozobi, Fertilidad y Alimento, La Milpa Zapoteca,src/main/resources/imagenes/dioses/zapoteca/pitao_cozobi.PNG,
+|
+Kukulcan Ixchel, Luna, Templo Lunar,src/main/resources/imagenes/dioses/maya/kukulcan_ixchel.PNG,
+Kinich Ahau, Sol, Templo Solar,src/main/resources/imagenes/dioses/maya/kinich_ahau.PNG,
+Chaac, Maizales y Lluvia, La Milpa Maya,src/main/resources/imagenes/dioses/maya/chaac.PNG,
+Ek Chuah, Trueno, Estruendo, src/main/resources/imagenes/dioses/maya/ek_chuah.PNG,
+Ah Yum Cimil, Muerte, Funerarias Treviño,src/main/resources/imagenes/dioses/maya/ah_yum_cimil.PNG,
+|
+Tlaloc, Lluvia, Tlalocan,src/main/resources/imagenes/dioses/teotihuacan/tlaloc.PNG,
+Quetzalcoatl, Dualidad del Hombre, Quetzalcoatl, src/main/resources/imagenes/dioses/teotihuacan/quetzalcoatl.PNG,
+Huehueteotl, Fuego, Cuicuilco,src/main/resources/imagenes/dioses/teotihuacan/huehueteotl.PNG,
+Chalchiuhtlicue, Guerra y Agua,Chahuistle, src/main/resources/imagenes/dioses/teotihuacan/chalchiuhtlicue.PNG,
+|
+Aquicha, Sol, Aquicha le el Sol, src/main/resources/imagenes/dioses/huasteca/aquicha.PNG,
+Tlazolteotl, Luna y Fecundacion, Templo Mun, src/main/resources/imagenes/dioses/huasteca/tlazolteotl.PNG,
+|
+Quetzalcoatl,<html> Conocimiento Cultura Filosofia y Fertilidad, Chido, src/main/resources/imagenes/dioses/tolteca/quetzalcoatl.png,
+Tezcatlipoca, Oscuridad, Templo Nocturno,src/main/resources/imagenes/dioses/tolteca/tezcatlipoca.PNG,
+Tlaloc, Lluvia, Templo con Goteras,src/main/resources/imagenes/dioses/tolteca/tlaloc.png,
+Xipe Totec,<html> Siembre Flores Primavera y Renacimiento, Totec Xipe, src/main/resources/imagenes/dioses/tolteca/xipe_totec.PNG,
+|
+Dzahui, Lluvia, Cueva de Apoala,src/main/resources/imagenes/dioses/mixteca/dzahui.PNG,
+Cohuy, Maiz, La Milpa Mixteca,src/main/resources/imagenes/dioses/mixteca/cohuy.PNG,
+Huehueteotl, Fuego, Llamas a mi,src/main/resources/imagenes/dioses/mixteca/huehueteotl.PNG,
+Tonatiuh, Sol, Soles de Hermosillo,src/main/resources/imagenes/dioses/mixteca/tonatiuh.PNG,
+|
+Chichini, Sol,Zempoala,src/main/resources/imagenes/dioses/totonaca/chichini.PNG,
+Quetzalcoatl, Estrella de la Montana, En la Montana,src/main/resources/imagenes/dioses/totonaca/quetzalcoatl.png,
+Xolotl, Estrella del Ocaso, En el Ocaso, src/main/resources/imagenes/dioses/totonaca/xolotl.png,
+|
+Curicauari, Fuego y Sol, Curiquitacati,src/main/resources/imagenes/dioses/purepecha/curicauari.PNG,
+Cuerauaperi, Tierra y Lluvia, Curiquitacata,src/main/resources/imagenes/dioses/purepecha/cuerauaperi.PNG,
+|
