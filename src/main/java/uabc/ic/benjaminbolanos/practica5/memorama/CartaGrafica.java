@@ -10,8 +10,8 @@ import javax.swing.ImageIcon;
 import org.imgscalr.Scalr;
 
 /**
- *
- * @author bbola
+ * Clase para una Carta Grafica que contiene dos caras, la frontal y la trasera
+ * @author benjabolanos
  */
 public class CartaGrafica extends javax.swing.JPanel {
 
@@ -19,7 +19,7 @@ public class CartaGrafica extends javax.swing.JPanel {
     private boolean esImagen;
 
     /**
-     * Creates new form Carta
+     * Constructor que inicializa componentes, crea reverso y frontal de la carta.
      */
     public CartaGrafica() {
         initComponents();
@@ -27,11 +27,18 @@ public class CartaGrafica extends javax.swing.JPanel {
         crearFrontal();
         viendoReverso = true;
     }
-
+    
+    /**
+     * Método para obtener si la carta muestra una imagen.
+     * @return 
+     */
     public boolean esImagen() {
         return esImagen;
     }
 
+    /**
+     * Método que crea la parte frontal de la carta, sin imagen puesta ni texto.
+     */
     private void crearFrontal() {
         try {
             File archivoImagen = new File("src/main/resources/imagenes/iconos/carta_frontal.png");
@@ -43,6 +50,9 @@ public class CartaGrafica extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Método que crea la parte trasera de la carta.
+     */
     private void crearReverso() {
         try {
             File archivoImagen = new File("src/main/resources/imagenes/iconos/carta_reverso.png");
@@ -54,14 +64,25 @@ public class CartaGrafica extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Método que une el fondo frontal con la imagen de un dios. Reescala la imagen
+     * del dios para que quede centrada por encima del fondo.
+     * @param rutaDios Ruta donde se encuentra la imagen del dios.
+     */
     private void unirFondoConDios(String rutaDios) {
         try {
+            //Archivo donde se encuentran las imagenes
             File archivoDios = new File(rutaDios);
             File archivoFondo = new File("src/main/resources/imagenes/iconos/carta_frontal.png");
+            
+            //Imagen nueva donde se dibujaran las otras dos imagenes
             BufferedImage res = new BufferedImage(150, 200, BufferedImage.TYPE_INT_ARGB);
+            
+            //Imagenes rescaladas 
             BufferedImage fondoImgRees = Scalr.resize(ImageIO.read(archivoFondo), 150, 200);
             BufferedImage diosImgReesc = Scalr.resize(ImageIO.read(archivoDios), 100);
-
+            
+            //Se pintan las imagenes en la nueva imagen.
             Graphics g = res.getGraphics();
             g.drawImage(fondoImgRees, 0, 0, null);
             g.drawImage(
@@ -70,24 +91,34 @@ public class CartaGrafica extends javax.swing.JPanel {
                     (fondoImgRees.getWidth() - diosImgReesc.getWidth()) / 2,
                     (fondoImgRees.getHeight() - diosImgReesc.getHeight()) / 2,
                     null);
-
+            //Se cambia el icono del label frontal.
             contenidoFrontal.setIcon(new ImageIcon(res));
         } catch (IOException e) {
             System.out.println("Error al formatear imagen");
         }
     }
 
+    /**
+     * Método para cambiar los datos de la carta grafica a partir del modelo de
+     * una carta.
+     * @param model 
+     */
     public void setContenido(CartaModel model) {
         esImagen = model.getEsImagen();
-        if (model.getEsImagen()) {
+        //Si es imagen, une el dios con el fondo y el texto vacio
+        if (esImagen) {
             contenidoFrontal.setText("");
             unirFondoConDios(model.getContenido());
         } else {
+            //Si no, crea un frontal sin dios y el texto es el nombre del dios.
             crearFrontal();
             contenidoFrontal.setText(model.getContenido());
         }
     }
 
+    /**
+     * Método para mostrar el contenido de la carta o la parte frontal
+     */
     public void mostrarContenido() {
         if (viendoReverso) {
             CardLayout cl = (CardLayout) cardsPanel.getLayout();
@@ -96,6 +127,9 @@ public class CartaGrafica extends javax.swing.JPanel {
         }
     }
 
+    /**
+     * Método para mostrar el reverso de la carta.
+     */
     public void mostrarReverso() {
         if (!viendoReverso) {
             CardLayout cl = (CardLayout) cardsPanel.getLayout();

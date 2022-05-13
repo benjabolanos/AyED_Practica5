@@ -10,6 +10,9 @@ import uabc.ic.benjaminbolanos.practica5.Dios;
  */
 public class PanelDioses extends javax.swing.JPanel {
 
+    /**
+     * Constructor que inicializa los componentes
+     */
     public PanelDioses() {
         initComponents();
     }

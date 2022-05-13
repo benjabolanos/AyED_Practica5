@@ -4,21 +4,25 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 /**
- *
- * @author bbola
+ * Clase que hereda del JPanel. Panel que contiene toda la vista y controlador
+ * del Memorama.
+ * @author benjabolanos
  */
 public class VistaMemorama extends javax.swing.JPanel {
-
+    //Controlador
     private final ControlMemorama control;
-
+    //Cantidad cartas seleccionadas
     private int cantidadCartasSeleccionadas;
-
+    //Cartas seleccionadas
     private final CartaGrafica[] cartasSeleccionadas;
+    //Posiciones de las cartas seleccionadas
     private final int[] posicionesCartasSeleccionadas;
+    //Array de las cartas graficas mostradas
     private CartaGrafica[] cartasGraficas;
 
     /**
-     * Creates new form VistaMemorama
+     * Constructor que inicializa componentes, controlador y arrays.
+     * Crea listeners de las cartas. Inicia un nuevo juego.
      */
     public VistaMemorama() {
         initComponents();
@@ -30,6 +34,10 @@ public class VistaMemorama extends javax.swing.JPanel {
         nuevoJuego();
     }
     
+    /**
+     * Método que crea un nuevo juego. Crea nuevas cartas, reinicia las cartas
+     * graficas, y muestra el panel de la guia rapida.
+     */
     private void nuevoJuego(){
         control.crearCartas();
         cantidadCartasSeleccionadas = 0;
@@ -43,6 +51,9 @@ public class VistaMemorama extends javax.swing.JPanel {
         panelResultados.mostrarGuia();
     }
     
+    /**
+     * Método que mete las cartas graficas en un array.
+     */
     private void crearArrayCartas(){
         cartasGraficas = new CartaGrafica[]{
             cartaGrafica1, cartaGrafica2, cartaGrafica3, cartaGrafica4,
@@ -50,14 +61,22 @@ public class VistaMemorama extends javax.swing.JPanel {
         };
     }
 
+    /**
+     * Método que se le pondrá como listener a cada carta grafica. 
+     * @param posCarta
+     * @param carta 
+     */
     private void cartasListener(int posCarta, CartaGrafica carta) {
         if (cantidadCartasSeleccionadas < 2) {
-            carta.mostrarContenido();
+            carta.mostrarContenido(); //Muestra el contenido de la carta
             cartasSeleccionadas[cantidadCartasSeleccionadas] = carta;
             posicionesCartasSeleccionadas[cantidadCartasSeleccionadas++] = posCarta;
         }
     }
     
+    /**
+     * Método que crea los listeners de cada carta usando cartasListener.
+     */
     private void configurarCartas() {
         for (int i = 0; i < cartasGraficas.length; i++) {
             int pos = i;
@@ -70,6 +89,13 @@ public class VistaMemorama extends javax.swing.JPanel {
             });
         }
     }
+    
+    /**
+     * Método para realizar un intento. Compara las dos cartas seleccionadas.
+     * Si las cartas son pares, las hace invisible, si no, muestra la parte trasera
+     * de las cartas. Despues, verifica si el juego está terminado. En ese caso,
+     * muestra el panel con los resultados y el botón para crear un nuevo juego.
+     */
     private void realizarIntento() {
         if (cantidadCartasSeleccionadas == 2) {
             System.out.println("Intercambio entre: " + posicionesCartasSeleccionadas[0] + " - " + posicionesCartasSeleccionadas[1]);

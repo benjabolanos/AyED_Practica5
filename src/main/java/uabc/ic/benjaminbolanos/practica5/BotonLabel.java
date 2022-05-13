@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- *
+ * Clase que extiende de JLabel, modela un boton con efecto de hover.
  * @author benjabolanos
  */
 public class BotonLabel extends JLabel{
@@ -32,6 +32,10 @@ public class BotonLabel extends JLabel{
         super.paintComponent(g);
     }
     
+    /**
+     * Método que crea los listeners de cuando el mouse entra y sale del area
+     * del boton.
+     */
     private void crearListeners(){
         addMouseListener(new MouseAdapter(){
             @Override

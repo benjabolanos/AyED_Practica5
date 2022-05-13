@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- *
+ * Clase que modela una cultura mesoamericana.
  * @author benjabolanos
  */
 public class Cultura {
@@ -16,6 +16,16 @@ public class Cultura {
     private String nombre, areaGeografica, ciudadPrincipal, añoAparicion, añoExtincion;
     private ListaCircular<Dios> dioses;
 
+    /**
+     * Constructor que recibe todos los datos de la cultura y una lista con sus
+     * dioses
+     * @param nombre Nombre de la cultura
+     * @param areaGeografica Area geografica donde se encontraba esta cultura
+     * @param ciudadPrincipal Ciudad principal de esta cultura
+     * @param añoAparicion Año que aparece por primera vez la cultura
+     * @param añoExtincion Año que se extingue la cultura
+     * @param dioses Lista de dioses que veneraba esta cultura
+     */
     public Cultura(String nombre, String areaGeografica, String ciudadPrincipal, 
             String añoAparicion, String añoExtincion, ListaCircular dioses) {
         this.nombre = nombre;
@@ -26,6 +36,11 @@ public class Cultura {
         this.dioses = dioses;
     }
 
+    /**
+     * Método estático para generar una lista con todas las culturas y sus dioses
+     * leyendo los archivos de texto correspondientes.
+     * @return Retorna una ListaCircularDoble con todas las Culturas
+     */
     public static ListaCircularDoble<Cultura> obtenerListaCulturas() {
         ListaCircularDoble<Cultura> culturas = new ListaCircularDoble();
         try {
@@ -60,10 +75,13 @@ public class Cultura {
         } catch (IOException e) {
             System.out.println("Error al leer archivo culturas.");
         }
-
         return culturas;
     }
 
+    /**
+     * Método toString que contiene la información de la cultura
+     * @return String con la información de la cultura.
+     */
     @Override
     public String toString() {
         return "Nombre: " + nombre + "\nArea Geografica: " + areaGeografica

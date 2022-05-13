@@ -9,6 +9,9 @@ import uabc.ic.benjaminbolanos.practica5.Cultura;
  */
 public class PanelCulturas extends javax.swing.JPanel {
     
+    /**
+     * Constructor que inicializa los componentes
+     */
     public PanelCulturas() {
         initComponents();
     }

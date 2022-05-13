@@ -3,14 +3,16 @@ package uabc.ic.benjaminbolanos.practica5.listaculturas;
 import javax.swing.ImageIcon;
 
 /**
- *
+ * Clase que modela la Vista del Listado de Culturas. Une ambos paneles de 
+ * Culturas y Dioses. Une esos paneles con el control para mostrar los datos.
  * @author bbola
  */
 public class VistaCulturas extends javax.swing.JPanel {
     private final ControlCulturas control;
 
     /**
-     * Creates new form VistaCulturas
+     * Constructor que inicializa componentes, control y actualiza los paneles
+     * para mostrar los datos.
      */
     public VistaCulturas() {
         initComponents();
@@ -18,21 +20,33 @@ public class VistaCulturas extends javax.swing.JPanel {
         actualizar();
     }
     
+    /**
+     * Método para obtener cultura y dios actual y mostrarlos.
+     */
     private void actualizar(){
         panelCulturas1.setCultura(control.getCulturaActual());
         panelDioses2.setDios(control.getDiosActual());
     }
     
+    /**
+     * Método que avanza la cultura y actualiza.
+     */
     private void avanzarCultura(){
         control.avanzarCultura();
         actualizar();
     }
     
+    /**
+     * Método que retrocede la cultura y actualiza.
+     */
     private void retrocederCultura(){
         control.retrocederCultura();
         actualizar();
     }
     
+    /**
+     * Método que avana el dios y actualiza.
+     */
     private void avanzarDios(){
         control.avanzarDios();
         actualizar();

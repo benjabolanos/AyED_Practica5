@@ -6,7 +6,8 @@ import uabc.ic.benjaminbolanos.practica5.listaculturas.VistaCulturas;
 import uabc.ic.benjaminbolanos.practica5.memorama.VistaMemorama;
 
 /**
- *
+ * Clase Principal que contiene los paneles para ver la información de las Culturas
+ * y para jugar al Memorama.
  * @author bbola
  */
 public class MainFrame extends javax.swing.JFrame {
@@ -15,14 +16,15 @@ public class MainFrame extends javax.swing.JFrame {
     
     // Indica si la ventana visible es el listado de culturas
     private boolean viendoListado; 
-    
+
+    //Colores principales para efectos.
     private final Color OSCURO = Color.decode("#1C110A");
     private final Color OSCURO_HOVER = Color.decode("#2D1B10");
     private final Color CLARO = Color.decode("#E4D6A7");
     private final Color CLARO_HOVER = Color.decode("#DBC88A");
     
     /**
-     * Creates new form MainFrame
+     * Constructor que inicializa componentes y paneles.
      */
     public MainFrame() {
         initComponents();
@@ -30,25 +32,15 @@ public class MainFrame extends javax.swing.JFrame {
         viendoListado = true;
     }
     
+    /**
+     * Método que inicia los paneles para ver culturas y ver memorama. Los 
+     * agrega al card layout.
+     */
     private void iniciarCardsPanel(){
         culturas = new VistaCulturas();
         memorama = new VistaMemorama();
         cardsPanel.add(culturas, "Culturas");
         cardsPanel.add(memorama, "Memorama");
-    }
-    
-    private void playground(){
-        String[] ar = new String[5];
-        ar[0] = "a"; ar[1] = "a"; ar[2] = "a";ar[3] = "a";ar[4] = "a"; 
-        for(int i = 0; i < ar.length; i++){
-            System.out.println(ar[i]);
-        }
-        System.out.println("");
-        ar[0] = null; ar[3] = null;
-        for(int i = 0; i < ar.length; i++){
-            
-            System.out.println(ar[i]);
-        }
     }
 
     /**
@@ -218,6 +210,10 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonMemoramaMouseExited
 
+    /**
+     * Método para cambiar a la vista del memorama
+     * @param evt 
+     */
     private void botonMemoramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMemoramaMouseClicked
         if(viendoListado){
             CardLayout cl = (CardLayout) cardsPanel.getLayout();
@@ -230,6 +226,10 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonMemoramaMouseClicked
 
+    /**
+     * Evento para cambiar a la vista del Listado de Culturas
+     * @param evt 
+     */
     private void botonListadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonListadoMouseClicked
         if(!viendoListado){
             CardLayout cl = (CardLayout) cardsPanel.getLayout();

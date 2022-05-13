@@ -6,26 +6,36 @@ import uabc.ic.benjaminbolanos.practica5.listascirculares.ListaCircular;
 import uabc.ic.benjaminbolanos.practica5.listascirculares.Nodo;
 
 /**
- *
- * @author bbola
+ * Clase que hereda de JPanel. Es el panel donde se muestran los resultados
+ * y la guía rápida del Memorama.
+ * @author benjabolanos
  */
 public class PanelResultadosMemorama extends javax.swing.JPanel {
 
+    //Nodo de la carta actual.
     private Nodo<CartaModel> cartaActual;
     
     /**
-     * Creates new form VistaCartasMemorama
+     * Constructor que inicializa componentes y muestra contenido de la carta
+     * grafica.
      */
     public PanelResultadosMemorama() {
         initComponents();
         cartaGrafica1.mostrarContenido();
     }
     
+    /**
+     * Método para mostrar el panel de guia rapida
+     */
     public void mostrarGuia(){
         CardLayout cl = (CardLayout) mainPanel.getLayout();
         cl.show(mainPanel, "guia");
     }
     
+    /**
+     * Método para mostrar el panel de resultados con la lista de CartaModel recibida
+     * @param cartas Cartas a mostrar como resultado
+     */
     public void mostrarResultados(ListaCircular<CartaModel> cartas){
         cartaActual = cartas.getInicio();
         cartaGrafica1.setContenido(cartaActual.getInfo());
@@ -33,6 +43,9 @@ public class PanelResultadosMemorama extends javax.swing.JPanel {
         cl.show(mainPanel, "resultados");
     }
     
+    /**
+     * Método para avanzar hacia la siguiente carta y actualizar el contenido.
+     */
     private void avanzarCarta(){
         cartaActual = cartaActual.getSig();
         cartaGrafica1.setContenido(cartaActual.getInfo());
